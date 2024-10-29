@@ -41,6 +41,8 @@
   keymap {
     compatible = "zmk,keymap";
 
+/*
+
     letters {
       display-name = "Colemak";
       bindings = <
@@ -65,7 +67,7 @@
       >;
     };
 
-*/
+// */
 
     function {
       display-name = "FN";
