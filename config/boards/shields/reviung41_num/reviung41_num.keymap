@@ -23,59 +23,48 @@
     combo_ctrl {
       timeout-ms = <100>;
       key-positions = <48 52>;
-      bindings = <&tog 1>;
+      bindings = <&tog 2>;
     };
-  };
 
-  behaviors {
-    tt: to_tap {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <250>;
-      bindings = <&to>, <&kp>;
+    combo_colemak {
+      timeout-ms = <100>;
+      key-positions = <0 36 47 11>;
+      bindings = <&tog 1>;
     };
   };
 
   keymap {
     compatible = "zmk,keymap";
-
-/*
-
-    letters {
-      display-name = "Colemak";
-      bindings = <
-      &mt ESC GRAVE   &kp N1        &kp N2      &kp N3     &kp N4      &kp N5          &kp N6 &kp N7     &kp N8        &kp N9        &kp N0        &mt RBKT MINUS
-      &kp TAB         &kp Q         &kp W       &kp F      &kp P       &kp G           &kp J  &kp L      &kp U         &kp Y         &kp SEMI      &mt LBKT EQUAL
-      &caps_word      &mt LSHIFT A  &mt LCTRL R &mt LALT S &mt LCMD T  &kp D           &kp H  &mt RCMD N &mt RALT E    &mt RCTRL I   &mt RSHFT O   &kp SQT
-      &kp GLOBE       &kp Z         &kp X       &kp C      &kp V       &kp B           &kp K  &kp M      &kp COMMA     &kp DOT       &kp FSLH      &kp BSLH
-                                                &lt 1 BSPC &kp RET           &kp SPACE        &kp TAB    &lt 1 DEL
-      >;
-    };
-
-/*/
-
-    letters {
+    qwerty {
       display-name = "QWERTY";
       bindings = <
-      &mt ESC GRAVE   &kp N1        &kp N2      &kp N3     &kp N4      &kp N5          &kp N6 &kp N7     &kp N8        &kp N9        &kp N0        &mt RBKT MINUS
-      &kp TAB         &kp Q         &kp W       &kp E      &kp R       &kp T           &kp Y  &kp U      &kp I         &kp O         &kp P         &mt LBKT EQUAL
-      &caps_word      &mt LSHIFT A  &mt LCTRL S &mt LALT D &mt LCMD F  &kp G           &kp H  &mt RCMD J &mt RALT K    &mt RCTRL L   &mt RSHFT SEMI   &kp SQT
-      &kp GLOBE       &kp Z         &kp X       &kp C      &kp V       &kp B           &kp N  &kp M      &kp COMMA     &kp DOT       &kp FSLH      &kp BSLH
-                                                &lt 1 BSPC &kp RET           &kp SPACE        &kp TAB    &lt 1 DEL
+      &mt ESC GRAVE   &kp N1        &kp N2      &kp N3     &kp N4      &kp N5          &kp N6 &kp N7     &kp N8        &kp N9        &kp N0          &mt RBKT MINUS
+      &kp TAB         &kp Q         &kp W       &kp E      &kp R       &kp T           &kp Y  &kp U      &kp I         &kp O         &kp P           &mt LBKT EQUAL
+      &caps_word      &mt LSHIFT A  &mt LCTRL S &mt LALT D &mt LCMD F  &kp G           &kp H  &mt RCMD J &mt RALT K    &mt RCTRL L   &mt RSHFT SEMI  &kp SQT
+      &kp GLOBE       &kp Z         &kp X       &kp C      &kp V       &kp B           &kp N  &kp M      &kp COMMA     &kp DOT       &kp FSLH        &kp BSLH
+                                                &lt 2 BSPC &kp RET           &kp SPACE        &kp TAB    &lt 2 DEL
       >;
     };
 
-// */
+    colemak {
+      display-name = "Colemak";
+      bindings = <
+      &trans          &kp N1        &kp N2      &kp N3     &kp N4      &kp N5          &kp N6 &kp N7     &kp N8        &kp N9        &kp N0          &mt RBKT MINUS
+      &trans          &kp Q         &kp W       &kp F      &kp P       &kp G           &kp J  &kp L      &kp U         &kp Y         &kp SEMI        &mt LBKT EQUAL
+      &trans          &mt LSHIFT A  &mt LCTRL R &mt LALT S &mt LCMD T  &kp D           &kp H  &mt RCMD N &mt RALT E    &mt RCTRL I   &mt RSHFT O     &kp SQT
+      &trans          &kp Z         &kp X       &kp C      &kp V       &kp B           &kp K  &kp M      &kp COMMA     &kp DOT       &kp FSLH        &kp BSLH
+                                                &trans     &trans            &trans           &trans     &trans
+      >;
+    };
 
     function {
       display-name = "FN";
       bindings = <
-      &mt ESC GRAVE   &kp F1        &kp F2      &kp F3     &kp F4      &kp F5          &kp F6 &kp F7     &kp F8        &kp F9        &kp F10       &mt F12 F11
-      &kp TAB         &none         &kp HOME    &kp UP     &kp PG_UP   &none           &none  &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP  &none         &none
-      &studio_unlock  &none         &kp LEFT    &kp DOWN   &kp RIGHT   &none           &none  &kp RCMD   &kp RALT      &kp RCTRL     &kp RSHFT     &none
-      &kp GLOBE       &none         &kp END     &none      &kp PG_DN   &none           &none  &none      &none         &none         &none         &none
-                                                &to 0      &kp RET           &kp SPACE        &kp TAB    &to 0
+      &mt ESC GRAVE   &kp F1        &kp F2      &kp F3     &kp F4      &kp F5          &kp F6 &kp F7     &kp F8        &kp F9        &kp F10         &mt F12 F11
+      &kp TAB         &none         &kp HOME    &kp UP     &kp PG_UP   &none           &none  &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP  &none           &none
+      &studio_unlock  &none         &kp LEFT    &kp DOWN   &kp RIGHT   &none           &none  &kp RCMD   &kp RALT      &kp RCTRL     &kp RSHFT       &none
+      &kp GLOBE       &none         &kp END     &none      &kp PG_DN   &none           &none  &none      &none         &none         &none           &none
+                                                &tog 1     &kp RET           &kp SPACE        &kp TAB    &tog 1
       >;
     };
   };
