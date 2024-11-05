@@ -8,9 +8,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-   flavor = "tap-preferred";
+   // flavor = "tap-preferred";
    quick_tap_ms = <125>;
-   tapping_term_ms = <250>;
+   // tapping_term_ms = <250>;
 };
 
 &lt {
@@ -24,18 +24,19 @@
     combo_ctrl {
       timeout-ms = <100>;
       key-positions = <48 52>;
-      bindings = <&tog 2>;
-    };
-
-    combo_colemak {
-      timeout-ms = <100>;
-      key-positions = <0 36 47 11>;
       bindings = <&tog 1>;
     };
+
+//    combo_colemak {
+//      timeout-ms = <100>;
+//      key-positions = <0 36 47 11>;
+//      bindings = <&tog 1>;
+//    };
   };
 
   keymap {
     compatible = "zmk,keymap";
+
     qwerty {
       display-name = "QWERTY";
       bindings = <
@@ -43,10 +44,10 @@
       &kp TAB         &kp Q         &kp W       &kp E      &kp R       &kp T           &kp Y  &kp U      &kp I         &kp O         &kp P           &mt LBKT EQUAL
       &caps_word      &mt LSHIFT A  &mt LCTRL S &mt LALT D &mt LCMD F  &kp G           &kp H  &mt RCMD J &mt RALT K    &mt RCTRL L   &mt RSHFT SEMI  &kp SQT
       &kp GLOBE       &kp Z         &kp X       &kp C      &kp V       &kp B           &kp N  &kp M      &kp COMMA     &kp DOT       &kp FSLH        &kp BSLH
-                                                &lt 2 BSPC &kp RET           &kp SPACE        &kp TAB    &lt 2 DEL
+                                                &lt 1 BSPC &kp RET           &kp SPACE        &kp TAB    &lt 1 DEL
       >;
     };
-
+/*
     colemak {
       display-name = "Colemak";
       bindings = <
@@ -57,7 +58,7 @@
                                                 &trans     &trans            &trans           &trans     &trans
       >;
     };
-
+*/
     function {
       display-name = "FN";
       bindings = <
@@ -65,7 +66,7 @@
       &kp TAB         &none         &kp HOME    &kp UP     &kp PG_UP   &none           &none        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none        &none
       &studio_unlock  &none         &kp LEFT    &kp DOWN   &kp RIGHT   &none           &none        &kp RCMD     &kp RALT      &kp RCTRL     &kp RSHFT    &none
       &kp GLOBE       &none         &kp END     &none      &kp PG_DN   &none           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &bt BT_CLR
-                                                &tog 1     &kp RET           &kp SPACE              &kp TAB    &tog 1
+                                                &tog 2     &kp RET           &kp SPACE              &kp TAB    &tog 2
       >;
     };
   };
