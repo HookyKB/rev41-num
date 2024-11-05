@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+/*
 / {
     aliases {
         led-red = &led0;
@@ -25,3 +25,4 @@
         };
     };
 };
+*/
