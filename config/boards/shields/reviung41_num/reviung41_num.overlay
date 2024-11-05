@@ -5,20 +5,21 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "reviung41_num_layout.dtsi"
+// #include "reviung41_num_layout.dtsi"
 
 / {
   chosen {
     zmk,kscan = &kscan_0;
-    zmk,physical-layout = &reviung41_num_layout;
+    //zmk,physical-layout = &reviung41_num_layout;
+    zmk,matrix_transform = &default_transform;
 
     /delete-property/ zephyr,console;
     /delete-property/ zephyr,shell-uart;
   };
 
-  reviung41_num_layout {
-      transform = <&default_transform>;
-  };
+  //reviung41_num_layout {
+  //    transform = <&default_transform>;
+  //};
 
   default_transform: default_transform {
       compatible = "zmk,matrix-transform";
