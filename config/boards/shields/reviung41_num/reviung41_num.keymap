@@ -3,9 +3,10 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <behaviors.dtsi>
 
 &mt {
    flavor = "tap-preferred";
@@ -62,8 +63,8 @@
       display-name = "FN";
       bindings = <
       &mt ESC GRAVE   &kp F1        &kp F2      &kp F3     &kp F4      &kp F5          &kp F6       &kp F7       &kp F8        &kp F9        &kp F10      &mt F12 F11
-      &kp TAB         &none         &kp HOME    &kp UP     &kp PG_UP   &none           &none        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none        &none
-      &studio_unlock  &none         &kp LEFT    &kp DOWN   &kp RIGHT   &none           &none        &kp RCMD     &kp RALT      &kp RCTRL     &kp RSHFT    &none
+      &kp TAB         &none         &kp HOME    &kp UP     &kp PG_UP   &none           &none        &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none        &out OUT_BLE
+      &studio_unlock  &none         &kp LEFT    &kp DOWN   &kp RIGHT   &none           &none        &kp RCMD     &kp RALT      &kp RCTRL     &kp RSHFT    &out OUT_USB
       &kp GLOBE       &none         &kp END     &none      &kp PG_DN   &none           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &bt BT_CLR
                                                 &tog 1     &kp RET           &kp SPACE              &kp BSPC     &tog 1
       >;
