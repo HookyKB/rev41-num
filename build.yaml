@@ -15,6 +15,6 @@
 include:
   - board: seeeduino_xiao_ble
     shield: reviung41_num rgbled_adapter
-    snippet: studio-rpc-usb-uart
+    snippet: studio-rpc-usb-uart zmk-usb-logging
   - board: seeeduino_xiao_ble
     shield: settings_reset
